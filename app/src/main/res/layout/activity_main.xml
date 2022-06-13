@@ -13,7 +13,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="150dp"
         android:fontFamily="cursive"
-        android:text="Catatan Keuangan"
+        android:text="Laporan Keuangan"
         android:textAlignment="center"
         android:textColor="#FF80AB"
         android:textSize="96sp"
