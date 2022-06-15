@@ -13,7 +13,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String createTransactionTableQuery = "CREATE TABLE transactions (transactionID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE, transactionDescription, transactionDate, transactionValue)";
+        String createTransactionTableQuery = "CREATE TABLE transactions (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE, ket, amount, date)";
         sqLiteDatabase.execSQL(createTransactionTableQuery);
     }
 

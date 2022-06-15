@@ -1,31 +1,23 @@
 package com.example.catatankeuangan.Model;
 
 public class Transaction {
-    private String id;
+    private Integer id;
     private String ket;
     private String amount;
     private String date;
 
-    public Transaction(String id, String ket, String amount, String date) {
+    public Transaction(Integer id, String ket, String amount, String date) {
         this.id = id;
         this.ket = ket;
         this.amount = amount;
         this.date = date;
     }
 
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -43,5 +35,13 @@ public class Transaction {
 
     public void setAmount(String amount) {
         this.amount = amount;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }
