@@ -3,10 +3,10 @@ package com.example.catatankeuangan.Model;
 public class Transaction {
     private Integer id;
     private String ket;
-    private String amount;
+    private Integer amount;
     private String date;
 
-    public Transaction(Integer id, String ket, String amount, String date) {
+    public Transaction(Integer id, String ket, Integer amount, String date) {
         this.id = id;
         this.ket = ket;
         this.amount = amount;
@@ -29,11 +29,11 @@ public class Transaction {
         this.ket = ket;
     }
 
-    public String getAmount() {
+    public Integer getAmount() {
         return amount;
     }
 
-    public void setAmount(String amount) {
+    public void setAmount(Integer amount) {
         this.amount = amount;
     }
 

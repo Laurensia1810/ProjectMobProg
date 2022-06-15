@@ -36,14 +36,14 @@ public class EntityHelper {
         Transaction t;
         Integer id;
         String ket;
-        String amount;
+        Integer amount;
         String date;
 
         if(cursor.getCount() > 0) {
             do{
                 id = cursor.getInt(cursor.getColumnIndexOrThrow("id"));
                 ket = cursor.getString(cursor.getColumnIndexOrThrow("ket"));
-                amount = cursor.getString(cursor.getColumnIndexOrThrow("amount"));
+                amount = cursor.getInt(cursor.getColumnIndexOrThrow("amount"));
                 date = cursor.getString(cursor.getColumnIndexOrThrow("date"));
 
                 t = new Transaction(id, ket, amount, date);
@@ -55,7 +55,25 @@ public class EntityHelper {
         return transactions;
     }
 
-    public void insertTransaction() {
+    public void insertTransaction(String ket, Integer amount, String date) {
+        String insertTransactionQuery = "INSERT INTO transactions (ket, amount, date) VALUES (" + ket + "', '" + amount + "', '" + date + "')";
+        db.execSQL(insertTransactionQuery);
+    }
 
+    public Integer sumAmount() {
+        String sumAmountQuery = "SELECT * FROM transactions";
+        Cursor cursor = db.rawQuery(sumAmountQuery, null);
+        cursor.moveToFirst();
+
+        Integer sumAmount = 0;
+
+        if(cursor.getCount() > 0) {
+            do{
+                sumAmount = sumAmount + cursor.getInt(cursor.getColumnIndexOrThrow("amount"));
+                cursor.moveToNext();
+            }while(!cursor.isAfterLast());
+        }
+
+        return sumAmount;
     }
 }
