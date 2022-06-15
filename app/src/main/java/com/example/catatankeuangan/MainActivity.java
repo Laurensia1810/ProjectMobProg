@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
     private final EntityHelper th = new EntityHelper(this);
     TextView budget;
     Button add_income;
