@@ -31,7 +31,6 @@
                 android:layout_height="wrap_content"
                 android:text="15/06/2022"
                 android:textColor="@color/black"
-
                 android:textSize="15sp" />
         </LinearLayout>
         <TextView
@@ -39,7 +38,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="28sp"
-            android:textColor="@color/green"
             android:textStyle="bold"
             android:text="5000000"/>
 
