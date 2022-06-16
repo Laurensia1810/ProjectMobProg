@@ -19,15 +19,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //connect widget ke id dan variabel
         budget = findViewById(R.id.budget);
         add_income = findViewById(R.id.add_income);
 
+        //akses db untuk ambil sisa tabungan
         th.open();
         Integer amount = th.sumAmount();
         th.close();
 
+        //value dari db ditampilin
         budget.setText(amount);
 
+        //intent buat pindah ke activity add transaction kalau mau tambah data
         add_income.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

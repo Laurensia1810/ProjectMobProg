@@ -24,11 +24,13 @@ public class AddTransaction extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_transaction);
 
+        //connect widget ke id dan variabel
         income = findViewById(R.id.income);
         expense = findViewById(R.id.expense);
         keterangan = findViewById(R.id.keterangan);
         jumlah = findViewById(R.id.jumlah);
 
+        //ambil value-value dari yang diinput user
         String ket = keterangan.getText().toString();
         String amt = jumlah.getText().toString();
         Integer amtInt = Integer.parseInt(amt);
@@ -36,6 +38,7 @@ public class AddTransaction extends AppCompatActivity {
         DateFormat dateFormat = new SimpleDateFormat("dd/mm/yyyy");
         String todayStr = dateFormat.format(today);
 
+        //ketika yang di klik itu tombol insert income (ada pendapatan)
         income.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -46,6 +49,7 @@ public class AddTransaction extends AppCompatActivity {
             }
         });
 
+        //ketika yang di klik itu tombol insert expense (ada pengeluaran)
         expense.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
