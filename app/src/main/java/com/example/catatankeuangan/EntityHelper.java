@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import com.example.catatankeuangan.Model.Transaction;
 
 import java.util.ArrayList;
+import java.util.Vector;
 
 public class EntityHelper {
     public Context context;
@@ -31,8 +32,8 @@ public class EntityHelper {
     }
 
     //buat tampilin keseluruhan transaksi
-    public ArrayList<Transaction> getTransaction() {
-        ArrayList<Transaction> transactions = new ArrayList<>();
+    public Vector<Transaction> getTransaction() {
+        Vector<Transaction> transactions = new Vector<>();
         String getTransactions = "SELECT * FROM transactions";
         Cursor cursor = db.rawQuery(getTransactions, null);
         cursor.moveToFirst();
