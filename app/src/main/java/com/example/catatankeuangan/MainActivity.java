@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         //value dari db ditampilin
         budget.setText(amount);
 
+        //ambil list transaksi dari db
         th.open();
         Vector<Transaction> tr = th.getTransaction();
         th.close();
@@ -47,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
         //tampilin data history
         TransactionAdapter adapter = new TransactionAdapter(MainActivity.this);
         adapter.setTransactions(tr);
-
         rv_history.setAdapter(adapter);
         rv_history.setLayoutManager(new LinearLayoutManager(MainActivity.this));
 
